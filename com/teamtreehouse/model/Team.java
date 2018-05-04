@@ -1,6 +1,7 @@
 package com.teamtreehouse.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -38,7 +39,7 @@ public class Team implements Comparable<Team> {
 
 	@Override
 	public int compareTo(Team o) {
-		return this.teamName.compareTo(o.teamName);
+		return this.teamName.toLowerCase().compareTo(o.teamName.toLowerCase());
 
 	}
 
@@ -54,8 +55,10 @@ public class Team implements Comparable<Team> {
 
 	public void printTeamPlayers() {
 		if (!teamRoster.isEmpty()) {
+			 List<Player> playerList = new ArrayList<>(teamRoster);
+			 Collections.sort(playerList);
 			System.out.println("Current Roster: \n");
-			for (Player player : teamRoster) {
+			for (Player player : playerList) {
 				System.out.println(player.toString());
 			}
 		}

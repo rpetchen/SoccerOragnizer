@@ -46,10 +46,10 @@ public class LeagueBalanceReport extends Report {
 	}
 
 	@Override
+	
 	public void printReport() {
 
-
-		for (Map.Entry<Experience, Integer> entry : map.entrySet()) {
+		for (Map.Entry<Experience, Integer> entry : map.entrySet()){
 			System.out.println("\nThe number of " + entry.getKey().getValue() + " players: " + entry.getValue());
 		}
 

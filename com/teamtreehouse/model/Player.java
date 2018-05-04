@@ -60,9 +60,9 @@ public class Player implements Comparable<Player>, Serializable {
 
 	@Override
 	public int compareTo(Player other) {
-		int order = this.lastName.compareTo(other.getLastName());
+		int order = this.lastName.toLowerCase().compareTo(other.getLastName().toLowerCase());
 		if (order == 0) {
-			return this.firstName.compareTo(other.getFirstName());
+			return this.firstName.toLowerCase().compareTo(other.getFirstName().toLowerCase());
 		}
 		return order;
 	}
